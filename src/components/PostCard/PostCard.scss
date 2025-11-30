@@ -1,0 +1,61 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.post-card {
+  background: $bg-color;
+  border-radius: $border-radius;
+  padding: 1.25rem;
+  box-shadow: $shadow;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  border: 2px solid $border-color;
+  outline: none;
+}
+
+@media (hover: hover) {
+  .post-card:hover {
+    box-shadow: $shadow-hover;
+    border-color: $primary-color;
+
+    outline: none;
+  }
+}
+
+.post-card__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $text-color;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  outline: none;
+  
+  &:focus {
+    outline: none;
+  }
+  
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@include tablet-up {
+  .post-card {
+    padding: 1.5rem;
+  }
+
+  .post-card__title {
+    font-size: 1.5rem;
+  }
+}
+
+@include desktop {
+  .post-card {
+    padding: 2rem;
+  }
+}
+

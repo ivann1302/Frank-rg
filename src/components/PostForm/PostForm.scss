@@ -1,0 +1,53 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.post-form {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.post-form__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $text-color;
+  margin-bottom: 2rem;
+}
+
+.post-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.post-form__error--general {
+  padding: 1rem;
+  background-color: $error-bg-color;
+  border: 1px solid $error-color;
+  border-radius: $border-radius;
+  color: $error-color;
+}
+
+.post-form__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.post-form__button {
+  min-width: 120px;
+}
+
+@include tablet-up {
+  .post-form {
+    padding: 1.5rem;
+  }
+
+  .post-form__title {
+    font-size: 2.5rem;
+  }
+
+}
+

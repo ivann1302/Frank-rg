@@ -1,0 +1,98 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.post-list {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.post-list__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+
+  @include tablet-up {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.post-list__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $text-color;
+  margin: 0;
+}
+
+.post-list__create-btn {
+  min-width: 160px;
+}
+
+.post-list__empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: $text-color-light;
+}
+
+.post-list__empty-hint {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.post-list__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.post-list__grid > div {
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+}
+
+.post-list__grid > div:focus {
+  outline: none;
+}
+
+.post-list__grid > div:focus-visible {
+  outline: 2px solid $secondary-color;
+  outline-offset: 2px;
+  border-radius: $border-radius;
+}
+
+.post-list__grid > div:active {
+  transform: scale(0.98);
+}
+
+@include tablet-up {
+  .post-list {
+    padding: 1.5rem;
+  }
+
+  .post-list__title {
+    font-size: 2.5rem;
+  }
+
+  .post-list__grid {
+    gap: 2rem;
+  }
+}
+
+@include desktop {
+  .post-list {
+    padding: 2rem;
+  }
+
+  .post-list__grid {
+    gap: 2.5rem;
+  }
+}
+

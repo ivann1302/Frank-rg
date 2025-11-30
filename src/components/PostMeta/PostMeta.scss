@@ -1,0 +1,36 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.post-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.post-meta--view {
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid $border-color;
+}
+
+.post-meta__date {
+  font-size: 0.875rem;
+  color: $text-color-light;
+}
+
+.post-meta__date--edited {
+  color: $secondary-color;
+}
+
+@include tablet-up {
+  .post-meta {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .post-meta--view {
+    gap: 1.5rem;
+  }
+}
+

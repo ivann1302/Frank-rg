@@ -1,0 +1,103 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.post-view {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.post-view__header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0;
+}
+
+.post-view__content {
+  flex: 1;
+}
+
+.post-view__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $text-color;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  outline: none;
+  
+  &:focus {
+    outline: none;
+  }
+  
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+
+.post-view__text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: $text-color;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  outline: none;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+.post-view__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid $border-color;
+}
+
+.post-view__actions-group {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.post-view__button {
+  min-width: 140px;
+}
+
+@include tablet-up {
+  .post-view {
+    padding: 1.5rem;
+  }
+
+  .post-view__title {
+    font-size: 2.5rem;
+  }
+
+  .post-view__text {
+    font-size: 1.25rem;
+  }
+}
+
+@include desktop {
+  .post-view {
+    padding: 2rem;
+  }
+
+  .post-view__title {
+    font-size: 3rem;
+  }
+
+  .post-view__text {
+    font-size: 1.25rem;
+    line-height: 2;
+  }
+}
+
